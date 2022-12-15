@@ -2,7 +2,7 @@
 
 print("Wawaweewa, day 5!")
 
-f = open("input.txt","r")
+f = open("input_test.txt","r")
 lines = f.readlines()
 
 i = 0
@@ -46,7 +46,8 @@ for line in lines :
             stacks_9001[destination].append(transport.pop())       
         
     else :
-        stacks_9001 = [stacks[j].copy() for j in range(number_of_stacks)]
+        # stacks_9001 = stacks.copy <------ Bad!
+        stacks_9001 = [stack.copy() for stack in stacks]
         continue
 
 answer1 = []
